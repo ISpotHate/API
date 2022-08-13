@@ -4,3 +4,5 @@ uvicorn[standard]
 transformers
 datasets
 torch
+detoxify
+protobuf==3.19.0
