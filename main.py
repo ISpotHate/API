@@ -6,6 +6,7 @@ from transformers import AutoTokenizer, AutoModelForSequenceClassification, Text
 from collections import OrderedDict
 from detoxify import Detoxify
 import re
+import uvicorn
 
 app = FastAPI()
 
@@ -225,14 +226,13 @@ def returnall(text: str):
     # Add swearing labels
     for word in text.split(' '):
         for bad_word in bad_words_list:
-            if bad_word in regex.sub('', word).lower():
+            if bad_word in regex.sub('', word):
                 isswearing = True
-                text = text.replace(word, '*' * len(word))
     returndict['isswearing'] = isswearing
     islgbtq = False
     for word in text.split(' '):
         for lgbtq_word in lgbtq_list:
-            if regex.sub('', word).lower() in lgbtq_list:
+            if lgbtq_word in regex.sub('', word):
                 islgbtq = True
                 break
     if (returndict.get('HATE') > returndict.get('NON_HATE') and islgbtq):
@@ -240,4 +240,11 @@ def returnall(text: str):
     else:
         returndict['ishomophobia'] = False
     # Return the combination of all labels
-    return returndict   
+    return returndict
+
+"""
+if __name__ == '__main__':
+    uvicorn.run("main:app", port=443, host='0.0.0.0', reload = True , \
+    ssl_keyfile="/etc/letsencrypt/live/ispothate.eastus.cloudapp.azure.com/privkey.pem", \
+    ssl_certfile="/etc/letsencrypt/live/ispothate.eastus.cloudapp.azure.com/fullchain.pem")
+"""
