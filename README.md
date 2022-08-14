@@ -15,4 +15,4 @@ Features:
 - /toxicity -> Returns whether the speech is toxic or not, as well as other labels (toxicity, severe_toxicity, obscene, threat, insult, identity_attack, sexual_explicit)
 - /returnlabels -> Returns every label (from above methods)
 
-Want to add more features? Either [install the API and run it locally](SETUP.md) or (add your own model)[ADDMODEL.md]
+Want to add more features? Either [install the API and run it locally](SETUP.md) or [add your own model](ADDMODEL.md)
