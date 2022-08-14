@@ -16,3 +16,5 @@ Features:
 - /returnlabels -> Returns every label (from above methods)
 
 Want to add more features? Either [install the API and run it locally](SETUP.md) or [add your own model](ADDMODEL.md)
+
+We offer long term support for any API installations! Please email mmmzzz66g@gmail.com with any questions. 
