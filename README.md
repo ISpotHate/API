@@ -13,6 +13,6 @@ Features:
 - /sentiment -> Returns the sentiment of the text (negative, neutral, or positive)
 - /intent -> Returns the intent of the text (confidence of speech being targeted, aggressive, or hateful)
 - /toxicity -> Returns whether the speech is toxic or not, as well as other labels (toxicity, severe_toxicity, obscene, threat, insult, identity_attack, sexual_explicit)
-- /returnlabels -> Returns every label (from above)
+- /returnlabels -> Returns every label (from above methods)
 
 Want to add more features? Either [install the API and run it locally](SETUP.md) or (add your own model)[ADDMODEL.md]
