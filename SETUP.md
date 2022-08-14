@@ -1,4 +1,4 @@
-Install locally or on a VM
+Install locally or on a VM:
 
 ```
 pip3 install -U pip
